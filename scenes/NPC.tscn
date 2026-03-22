@@ -1,0 +1,96 @@
+[gd_scene load_steps=10 format=3 uid="uid://4j0msh66qao8"]
+
+[ext_resource type="Texture2D" uid="uid://cbhv7ol16w6pv" path="res://assets/NPC/Bitty Business sprites.png" id="2_6xvi5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slm4e"]
+atlas = ExtResource("2_6xvi5")
+region = Rect2(160, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6w2b"]
+atlas = ExtResource("2_6xvi5")
+region = Rect2(200, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktgr7"]
+atlas = ExtResource("2_6xvi5")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnjht"]
+atlas = ExtResource("2_6xvi5")
+region = Rect2(40, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pv12"]
+atlas = ExtResource("2_6xvi5")
+region = Rect2(80, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6c3r"]
+atlas = ExtResource("2_6xvi5")
+region = Rect2(120, 0, 40, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_smehm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slm4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6w2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktgr7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jnjht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7pv12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6c3r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktgr7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jnjht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7pv12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6c3r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktgr7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jnjht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7pv12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6c3r")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3vyb7"]
+size = Vector2(8, 17.5)
+
+[node name="NPC" type="CharacterBody2D" groups=["NPC", "player"]]
+scale = Vector2(4, 4)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.5, -1.75)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_smehm")
+animation = &"idle"
+autoplay = "idle"
+frame = 4
+frame_progress = 0.1556206
+
+[node name="SelfCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.75)
+shape = SubResource("RectangleShape2D_3vyb7")

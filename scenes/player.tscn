@@ -228,6 +228,9 @@ frame = 7
 position = Vector2(0, -1.75)
 shape = SubResource("RectangleShape2D_3vyb7")
 
+[node name="RayCast2D" type="RayCast2D" parent="."]
+collide_with_areas = true
+
 [node name="Sword" type="Area2D" parent="." groups=["player_weapon"]]
 position = Vector2(0, -0.75)
 
